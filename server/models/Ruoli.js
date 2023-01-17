@@ -11,4 +11,4 @@ const ruoliSchema = mongoose.Schema({
     }
 }, {timestamps: true} )
 
-export const Ruoli = mongoose.model("Ruoli", ruoliSchema)
+export const Ruolo = mongoose.model("Ruolo", ruoliSchema)

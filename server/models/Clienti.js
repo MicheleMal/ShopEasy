@@ -43,8 +43,8 @@ const clientiSchema = mongoose.Schema({
     },
     ruolo:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Ruoli"
+        ref: "Ruolo"
     },
 }, {timestamps: true} )
 
-export const Clienti = mongoose.model("Clienti", clientiSchema)
+export const Cliente = mongoose.model("Clienti", clientiSchema)
