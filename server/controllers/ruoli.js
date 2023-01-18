@@ -1,6 +1,3 @@
-import mongoose from "mongoose";
-import { Ruolo } from "../models/Ruoli.js"
-
 export const insertRuolo = async (req, res)=>{
     const ruolo = req.body
 
