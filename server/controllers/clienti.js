@@ -29,18 +29,6 @@ export const insertClienti = async (req, res)=>{
 export const loginCliente = async (req, res)=>{
     const data = req.body
 
-    // const query = `SELECT c.nome, c.cognome, c.email, c.citta, c.provincia, c.indirizzo, c.nCivico, c.CAP, c.nTelefono, r.nome as nomeRuolo
-    //                 FROM clienti as c
-    //                 INNER JOIN ruoli as r
-    //                 ON r.Id = c.ruolo
-    //                 WHERE email = "${data.email}" AND password = "${data.password}"`
-
-    // conn.query(query, (error, result)=>{
-    //     if(error) return res.status(400).json({status:"error", message: error.message})
-
-    //     res.status(200).json({status:"ok", record: result})
-    // })
-
     const query = `SELECT *
                     FROM Clienti
                     WHERE email = "${data.email}"`
