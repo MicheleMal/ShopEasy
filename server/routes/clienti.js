@@ -1,7 +1,9 @@
 import express from "express"
-import { deleteCliente, insertClienti, loginCliente, modifyCliente } from "../controllers/clienti.js"
+import { deleteCliente, insertClienti, loginCliente, modifyCliente, formRegister } from "../controllers/clienti.js"
 
 const router = express.Router()
+
+router.get("/register",formRegister);
 
 // Registrazione cliente
 router.post("/register", insertClienti)

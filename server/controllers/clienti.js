@@ -1,6 +1,10 @@
 import conn from "../db.js"
 import bcrypt from "bcryptjs"
 
+export const formRegister = async(req,res)=>{
+    res.render("clienti/register", {title: "Shop Easy"})
+}
+
 export const insertClienti = async (req, res)=>{
     const ruolo = "cliente"
     const cliente = req.body
