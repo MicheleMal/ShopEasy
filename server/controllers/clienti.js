@@ -6,22 +6,21 @@ export const formRegister = async(req,res)=>{
 }
 
 export const insertClienti = async (req, res)=>{
-    const ruolo = "cliente"
+    const ruolo = "user"
     const cliente = req.body
 
     const pwHash = await bcrypt.hash(cliente.password, 10)
 
-    const queryIdRuolo = `SELECT r.Id
+    const queryIdRuolo = `SELECT r.id
                             FROM ruoli as r
-                            WHERE r.nome = "cliente"`
+                            WHERE r.nome = "${ruolo}"`
 
     conn.query(queryIdRuolo, (error, idRuolo)=>{
         if(error) return res.status(400).json({status: "error", message: error.message})
 
         const quey = `INSERT INTO Clienti (nome, cognome, email, password, citta, provincia, indirizzo, nCivico, CAP, nTelefono, ruolo)
-                  VALUES ("${cliente.nome}", "${cliente.cognome}", "${cliente.email}", "${pwHash}", "${cliente.citta}", "${cliente.provincia}", "${cliente.indirizzo}", "${cliente.nCivico}", "${cliente.CAP}", "${cliente.nTelefono}", "${idRuolo[0].Id}")`
+                  VALUES ("${cliente.nome}", "${cliente.cognome}", "${cliente.email}", "${pwHash}", "${cliente.citta}", "${cliente.provincia}", "${cliente.indirizzo}", "${cliente.nCivico}", "${cliente.CAP}", "${cliente.nTelefono}", "${idRuolo[0].id}")`
         
-            
         conn.query(quey, (error, result)=>{
             if(error) return res.status(400).json({status: "error", message: error.message})
 

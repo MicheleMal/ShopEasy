@@ -20,16 +20,16 @@
       <div class="row">
         <div class="col">
           <h3>Sign up</h3>
-          <form class="row g-3" method="post" action="clienti/register">
+          <form class="row g-3" method="post" action="register" autocomplete="off">
             <div class="col-md-4">
               <label for="validationDefault01" class="form-label"
                 >Nome</label
               >
               <input
                 type="text"
+                name="nome"
                 class="form-control"
                 id="validationDefault01"
-                value="Mark"
                 required
               />
             </div>
@@ -39,9 +39,9 @@
               >
               <input
                 type="text"
+                name="cognome"
                 class="form-control"
                 id="validationDefault02"
-                value="Otto"
                 required
               />
             </div>
@@ -52,7 +52,8 @@
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend2">@</span>
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
                   class="form-control"
                   id="validationDefaultUsername"
                   aria-describedby="inputGroupPrepend2"
@@ -64,6 +65,7 @@
               <label for="validationDefault03" class="form-label">Password</label>
               <input
                 type="password"
+                name="password"
                 class="form-control"
                 id="validationDefault03"
                 required
@@ -73,6 +75,7 @@
               <label for="validationDefault03" class="form-label">Città</label>
               <input
                 type="text"
+                name="citta"
                 class="form-control"
                 id="validationDefault03"
                 required
@@ -82,6 +85,7 @@
               <label for="validationDefault05" class="form-label">Provincia</label>
               <input
                 type="text"
+                name="provincia"
                 class="form-control"
                 id="validationDefault05"
                 required
@@ -91,6 +95,7 @@
               <label for="validationDefault05" class="form-label">Indirizzo</label>
               <input
                 type="text"
+                name="indirizzo"
                 class="form-control"
                 id="validationDefault05"
                 required
@@ -100,6 +105,7 @@
               <label for="validationDefault05" class="form-label">Numero civico</label>
               <input
                 type="text"
+                name="nCivico"
                 class="form-control"
                 id="validationDefault05"
                 required
@@ -109,6 +115,7 @@
               <label for="validationDefault05" class="form-label">CAP</label>
               <input
                 type="text"
+                name="CAP"
                 value="00010"
                 class="form-control"
                 id="validationDefault05"
@@ -119,6 +126,7 @@
               <label for="validationDefault05" class="form-label">Numero telefono</label>
               <input
                 type="tel"
+                name="nTelefono"
                 class="form-control"
                 id="validationDefault05"
                 required

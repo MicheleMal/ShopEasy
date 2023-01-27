@@ -9,7 +9,8 @@ export const getAllProdotti = (req, res)=>{
     conn.query(query, (error, result)=>{
         if(error) return res.status(400).json({status: "error", message: error.message})
 
-        res.status(200).json({status:"ok", message:result})
+        res.render("prodotti/catalogo",{title:"Shop Easy", data: result})
+        //res.status(200).json({status:"ok", message:result})
     })
 }
 

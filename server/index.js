@@ -5,14 +5,15 @@ import ruoliRoutes from "./routes/ruoli.js"
 import categorieRoutes from "./routes/categorie.js"
 import prodottiRoutes from "./routes/prodotti.js"
 
-
-const PORT = process.env.PORT || 5000
-
+const PORT = process.env.PORT || 3000
 const app = express()
 
 app.set("view engine", "ejs")
 
 app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(cors())
 
 app.use("/clienti", clientiRoutes)

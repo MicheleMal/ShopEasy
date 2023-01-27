@@ -1,0 +1,12 @@
+.table {
+  margin-top: 2rem;
+  border: 0.2rem rgb(95, 95, 95) solid;
+  border-radius: 10% 10% 10% 10%;
+}
+th {
+  border: 0.2rem rgb(95, 95, 95) solid;
+  text-align: center;
+}
+td {
+  border: 0.2rem rgb(95, 95, 95) solid;
+}
