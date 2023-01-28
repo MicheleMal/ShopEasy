@@ -1,11 +1,13 @@
 import express from "express"
 import cors from "cors"
+import dotenv from "dotenv"
 import clientiRoutes from "./routes/clienti.js"
 import ruoliRoutes from "./routes/ruoli.js"
 import categorieRoutes from "./routes/categorie.js"
 import prodottiRoutes from "./routes/prodotti.js"
 
-const PORT = process.env.PORT || 3000
+dotenv.config()
+const PORT = process.env.PORT || 5000
 const app = express()
 
 app.set("view engine", "ejs")
