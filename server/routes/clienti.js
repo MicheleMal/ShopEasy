@@ -3,7 +3,7 @@ import { deleteCliente, insertClienti, loginCliente, modifyCliente, formRegister
 
 const router = express.Router()
 
-router.get("/register",formRegister);
+router.get("/account",formRegister);
 
 // Registrazione cliente
 router.post("/register", insertClienti)
