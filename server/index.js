@@ -26,7 +26,7 @@ app.get("/", (req, res)=>{
     //     status: "ok",
     //     message: "Ok"
     // })
-    res.render("index", {title: "Shop Easy"})
+    res.render("index", {title: "Shop Easy - Home"})
 })
 
 app.listen(PORT, ()=>{
