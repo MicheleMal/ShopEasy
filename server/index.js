@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import clientiRoutes from "./routes/clienti.js"
 import ruoliRoutes from "./routes/ruoli.js"
 import categorieRoutes from "./routes/categorie.js"
+import authRoutes from "./routes/auth.js"
 import prodottiRoutes from "./routes/prodotti.js"
 
 dotenv.config()
@@ -18,6 +19,7 @@ app.use(express.urlencoded({
 }));
 app.use(cors())
 
+app.use("/auth", authRoutes)
 app.use("/clienti", clientiRoutes)
 app.use("/ruolo", ruoliRoutes)
 app.use("/categoria", categorieRoutes)

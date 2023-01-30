@@ -1,18 +1,15 @@
 import express from "express"
-import { deleteCliente, insertClienti, loginCliente, modifyCliente, formRegister } from "../controllers/clienti.js"
+import { deleteCliente, modifyCliente, formRegister } from "../controllers/clienti.js"
+import {authenticateToken} from "../middleware/auth.js"
 
 const router = express.Router()
 
 router.get("/account",formRegister);
 
-// Registrazione cliente
-router.post("/register", insertClienti)
-router.post("/login", loginCliente)
-
 //  Eliminare account
-router.delete("/remove", deleteCliente)
+router.delete("/remove", authenticateToken, deleteCliente)
 
 // Modifica informazioni account
-router.patch("/modify", modifyCliente)
+router.patch("/modify", authenticateToken, modifyCliente)
 
 export default router
