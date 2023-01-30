@@ -18,7 +18,7 @@ export const insertProdotto = (req, res)=>{
     const data = req.body
 
     const idCategoria = `SELECT Id
-                        FROM Categorie
+                        FROM categorie
                         WHERE nome = "${data["nomeCategoria"]}"`
     
 
