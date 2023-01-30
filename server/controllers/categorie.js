@@ -14,7 +14,7 @@ export const getAllCategorie = (req, res)=>{
 export const createCategoria = (req, res)=>{
     const data = req.body
 
-    const query = `INSERT INTO Categorie (nome, descrizione)
+    const query = `INSERT INTO categorie (nome, descrizione)
                     VALUES ( "${data.nome}", "${data.descrizione}" )`
 
     conn.query(query, (error, result)=>{

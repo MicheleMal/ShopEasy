@@ -8,10 +8,6 @@ const conn = mysql2.createConnection({
     user: process.env.user,
     password: process.env.password,
     database: process.env.database
-    // host: "localhost",
-    // user: "root",
-    // password: "",
-    // database: "ShopEasy"
 })
 
 conn.connect(error=>{

@@ -2,8 +2,8 @@ import conn from "../db.js"
 
 export const getAllProdotti = (req, res)=>{
     const query = `SELECT p.titolo, p.descrizione, p.immagine, p.prezzo, p.prezzoScontato, c.nome as categoria
-                    FROM Prodotti as p
-                    INNER JOIN Categorie as c
+                    FROM prodotti as p
+                    INNER JOIN categorie as c
                     ON c.Id = p.categoria`
 
     conn.query(query, (error, result)=>{
@@ -25,7 +25,7 @@ export const insertProdotto = (req, res)=>{
     conn.query(idCategoria, (error, result)=>{
         if(error) return res.status(400).json({status: "error", message: error.message})
 
-        const query = `INSERT INTO Prodotti (titolo, descrizione, immagine, prezzo, prezzoScontato, categoria)
+        const query = `INSERT INTO prodotti (titolo, descrizione, immagine, prezzo, prezzoScontato, categoria)
                         VALUES ("${data.titolo}", "${data.descrizione}", "${data.immagine}", ${data.prezzo}, ${data.prezzoScontato}, ${result[0].Id})`
 
         conn.query(query, (error, result)=>{
@@ -41,7 +41,7 @@ export const modifyProdotto = (req, res)=>{
     const data = req.body
     const {id} = req.query
 
-    const query = `UPDATE Prodotti SET ? WHERE Id = ${id}`
+    const query = `UPDATE prodotti SET ? WHERE Id = ${id}`
 
     conn.query(query, data, (error, result)=>{
         if(error) return res.status(400).json({status: "error", message: error.message})
