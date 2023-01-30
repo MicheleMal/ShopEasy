@@ -31,14 +31,14 @@
             <p class="text-sm text-gray-600"><%- data.descrizione %></p>
             <div class="flex items-center justify-between">
               <% if(data.prezzoScontato != null){ %>
-              <p
-                class="text-lg font-medium text-gray-800 text-opacity-60"
-              >
-                Prima era:  <span class="line-through"><%- data.prezzo %> €</span>
-              </p>
               <p class="text-lg font-medium text-red-600">
                 <%- data.prezzoScontato %> €
               </p>
+              <p class="text-lg font-medium text-gray-800 text-opacity-60">
+                Prima era:
+                <span class="line-through"><%- data.prezzo %> €</span>
+              </p>
+
               <% } else{ %>
               <p class="text-lg font-medium text-gray-800">
                 <%- data.prezzo %> €
