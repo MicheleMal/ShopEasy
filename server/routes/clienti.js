@@ -4,7 +4,7 @@ import {authenticateToken} from "../middleware/auth.js"
 
 const router = express.Router()
 
-router.get("/account",formRegister);
+router.get("/account", formRegister);
 
 //  Eliminare account
 router.delete("/remove", authenticateToken, deleteCliente)

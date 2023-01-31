@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <%- include ("./layout/navbar.ejs") %>
+
+    <div class="flex items-center justify-center p-10">
+        <div class="text-center">
+          <h1 class="text-5xl font-medium">404</h1>
+          <p class="text-xl font-medium mb-5">Pagina Non Trovata</p>
+          <a class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded" href="/">Torna alla Homepage</a>
+        </div>
+      </div>
+      
+    <%- include ("./layout/footer.ejs") %>
+  </body>
+</html>

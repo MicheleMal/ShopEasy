@@ -43,12 +43,17 @@ export const loginCliente = async (req, res)=>{
 
             if(await bcrypt.compare(data.password, pwHashed)){
                 const token = jwt.sign({
-                    id: data.id,
-                    ruolo: data.ruolo
+                    id: result[0].id,
+                    ruolo: result[0].ruolo
                 },process.env.JWT_SECRET)
-                return res.status(200).json({status:"ok", message: token})
+
+                //return res.status(200).json({status:"ok", message: token})
+                return res.cookie("access_token", token, {
+                    httpOnly: true,
+                    secure: true
+                }).status(200).render("../views/clienti/account", {title: "Shop Easy - My Account", user: result[0]})
             }
         }
-        res.status(400).json({status:"error", message:"Username o password errati"})
+        return res.status(400).json({status:"error", message:"Username o password errati"})
     })
 }
