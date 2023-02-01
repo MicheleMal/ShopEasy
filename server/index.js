@@ -3,7 +3,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import clientiRoutes from "./routes/clienti.js";
-import ruoliRoutes from "./routes/ruoli.js";
 import categorieRoutes from "./routes/categorie.js";
 import authRoutes from "./routes/auth.js";
 import prodottiRoutes from "./routes/prodotti.js";
@@ -25,7 +24,6 @@ app.use(cookieParser())
 
 app.use("/auth", authRoutes);
 app.use("/clienti", clientiRoutes);
-app.use("/ruolo", ruoliRoutes);
 app.use("/categoria", categorieRoutes);
 app.use("/prodotto", prodottiRoutes);
 
