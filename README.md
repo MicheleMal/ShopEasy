@@ -18,4 +18,5 @@ Questo è un progetto portfolio per un sito vetrina di un negozio inventato che 
   * Database: MySQL
  ***
  ## Note
- Questo progetto lo sviluppato personalmente senza aiuto. Prossimamente aggiungerò la possibilià di fare degli ordini, gestire il proprio account e di cambiare le informazioni visualizzate tramite il ruolo in possesso
+ Questo progetto lo sviluppato personalmente senza aiuto. Prossimamente aggiungerò la possibilià di fare degli ordini, gestire il proprio account e di cambiare le informazioni visualizzate tramite il ruolo in possesso.
+Se volete vedere il sito: [ShopEasy](https://shopeasy-34c6.onrender.com)
