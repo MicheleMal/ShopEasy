@@ -64,3 +64,7 @@ export const loginCliente = async (req, res) => {
       .json({ status: "error", message: "Username o password errati" });
   });
 };
+
+export const logout = (req, res)=>{
+  return res.clearCookie("access_token").render("../views/clienti/formAccount", {title: "Shop Easy - Sign in"})
+}
