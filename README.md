@@ -8,9 +8,8 @@ Questo è un progetto portfolio per un sito vetrina di un negozio inventato che 
 
 ## Funzionalità
   * Area di registrazione e login per utenti
-  * Gestione dei ruoli: user e admin. Il ruolo **user** può solamente visionare i prodotti disponibili e acquistare tali prodotti, visualizare il proprio account con la possibiltà di modificare le varie informazioni o di eliminare l'account. 
-  Il ruolo **admin** può gestire tutti gli ordini effettuati dai clienti, inoltre ha la possibilità di aggiungere, modificare o eliminare prodotti e le varie categorie
-  * Chi ha il ruolo admin può gestire le varie categorie che devono essere aggiunte in fase di registrazione di un nuovo prodotto
+  * Gestione dei ruoli: user e admin. Il ruolo **user**, visualizare il proprio account con la possibiltà di modificare le varie informazioni o di eliminare l'account. 
+  * Il ruolo **admin** ha la possibilità di aggiungere, modificare, eliminare prodotti e le varie categorie. Inoltre può modificare il ruolo da user a admin o viceversa di un utente inserendo l'email
 
 ## Tacnologie utilizzate
   * Lato frontend: EJS, TailwindCSS per lo stile
@@ -19,6 +18,6 @@ Questo è un progetto portfolio per un sito vetrina di un negozio inventato che 
  ***
  ## Note
  Questo progetto lo sviluppato personalmente. Non c'è possibilità di fare ordini e visionarli dal proprio account.
- **Prossimamente** ci sarà la possibilità di modifcare le proprie informazioni dell'account e chi ha il ruolo admin può inserire nuovi prodotti e nuove categorie.
+ **Prossimamente** chi ha il ruolo admin può inserire nuovi prodotti e nuove categorie.
  
 Se volete vedere il sito: [ShopEasy](https://shopeasy-u8aw.onrender.com)

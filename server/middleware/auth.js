@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 export const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers["authorization"];
+  //const authHeader = req.headers["authorization"];
   // const token = authHeader && authHeader.split(" ")[1];
   const token = req.cookies.access_token;
 
@@ -18,6 +18,6 @@ export const authenticateToken = (req, res, next) => {
 
     req.id = user.id;
     req.ruolo = user.ruolo;
-    return next();
+    next();
   });
 };

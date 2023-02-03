@@ -23,46 +23,43 @@ export const formRegister = async (req, res) => {
 
 export const modifyCliente = (req, res) => {
   const data = req.body;
-  const { id } = req.query;
+  const id = req.id
 
-  if (data["ruolo"]) {
-    const getIdRuolo = `SELECT r.Id
-                            FROM ruoli as r
-                            WHERE r.nome = "${data["ruolo"]}"`;
+  const query = `UPDATE clienti SET ? WHERE id = ${id}`
 
-    conn.query(getIdRuolo, (error, idRuolo) => {
-      if (error)
-        return res
-          .status(400)
-          .json({ status: "error", message: error.message });
-      const query = `UPDATE Clienti SET ruolo = ${idRuolo[0].Id} WHERE Id = ${id}`;
+  conn.query(query, data, (error, result)=>{
+    if(error){
+      return res.status(400).json({status:"error", message:error.message})
+    }
+    return res.status(200).json({status:"ok", message:result})
+  })
+}
 
-      console.log(query);
-      conn.query(query, data, (error, result) => {
-        if (error)
-          return res
-            .status(400)
-            .json({ status: "error", message: error.message });
+export const modifyRuolo = (req, res)=>{
+  const data = req.body
 
-        res.status(200).json({ status: "ok", message: result });
-      });
-    });
-  } else {
-    const query = `UPDATE clienti SET ? WHERE Id = ${id}`;
+  const query = `UPDATE clienti SET ruolo = "${data.ruolo}" WHERE email = "${data.email}"`
 
-    conn.query(query, data, (error, result) => {
-      if (error)
-        return res
-          .status(400)
-          .json({ status: "error", message: error.message });
-
-      res.status(200).json({ status: "ok", message: result });
-    });
-  }
-};
+  conn.query(query, data, (error, result)=>{
+    if(error){
+      return res.status(400).json({status:"error", message:error.message})
+    }
+    const getUser = `SELECT *
+                    FROM clienti
+                    WHERE id = ${req.id}`
+    conn.query(getUser, (error, user)=>{
+      if(error){
+        return res.status(400).json({status:"error", message:error.message})
+      }
+      return res.status(200).render("../views/clienti/account", {title: "Shop Easy - My Accout", user: user[0]})
+    })
+    
+    //return res.status(200).json({status:"ok", message:result})
+  })
+}
 
 export const deleteCliente = async (req, res) => {
-  const { id } = req.query;
+  const id = req.id
   const query = `DELETE FROM clienti
                     WHERE id = ${id}`;
 
@@ -70,6 +67,7 @@ export const deleteCliente = async (req, res) => {
     if (error)
       return res.status(400).json({ status: "erorr", message: error.message });
 
-    res.status(200).json({ status: "ok", message: result });
+    return res.clearCookie("access_token").render("../views/clienti/formAccount", {title: "Shop Easy - Sign in"})
+    //res.status(200).json({ status: "ok", message: result });
   });
 };
