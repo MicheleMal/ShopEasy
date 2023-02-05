@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   //     status: "ok",
   //     message: "Ok"
   // })
-  res.render("index", { title: "Shop Easy - Home" });
+  res.render("index", { title: "Shop Easy - Home"});
 });
 
 app.get("*", (req, res) => {

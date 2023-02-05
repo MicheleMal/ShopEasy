@@ -1,3 +1,5 @@
+<!-- TODO: Inserire form per registrare un nuovo prodotto, con una select con tutte le varie categorie -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +53,8 @@
           </form>
         </div>
 
+        
+
         <div class="bg-white p-8">
           <h2 class="text-2xl font-medium mb-4">Modifica Ruolo Utente</h2>
           <form action="../clienti/modifyRuolo" method="post" autocomplete="off">
@@ -70,6 +74,55 @@
             </div>
           </form>
         </div>
+
+        <div class="bg-white p-8">
+          <h2 class="text-2xl font-medium mb-4">Aggiungi categoria</h2>
+          <form action="" method="post">
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="nome">Nome</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="nome" id="nome">
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block mb-2 font-medium">Descrizione</label>
+              <textarea name="nome" id="nome" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Inserisci descrizione categoria"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- <div class="bg-white p-8">
+          <form action="../clienti/modify" method="post">
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="password">Password</label>
+              <input class="border border-gray-400 p-2 w-full" type="password" name="password" id="password" value="<%= user.password %>">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="address">Indirizzo</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="indirizzo" id="address" value="<%= user.indirizzo %>">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="civic_number">Numero Civico</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="nCivico" id="civic_number" value="<%= user.nCivico %>">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="phone_number">Numero di Telefono</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="nTelefono" id="phone_number" value="<%= user.nTelefono %>">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="zip_code">CAP</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="CAP" id="zip_code" value="<%= user.CAP %>">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="city">Città</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="citta" id="city" value="<%= user.citta %>">
+            </div>
+            <div class="mb-4">
+              <label class="block font-medium mb-2" for="province">Provincia</label>
+              <input class="border border-gray-400 p-2 w-full" type="text" name="provincia" id="provincia" value="<%= user.provincia %>">
+              <div class="mb-4 mt-4">
+                <input class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded" type="submit" value="Modifica Account">
+              </div>
+            </form>
+          </div> -->
       </div>
 
       <!-- Utente ruolo user -->
@@ -113,15 +166,9 @@
             <form action="../clienti/remove" method="post">
               <input class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded" type="submit" value="Elimina Account">
             </form>
-<<<<<<< HEAD
             <form action="../auth/logout" method="get">
               <input class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 mt-4 rounded" type="submit" value="Logout">
             </form>
-=======
-            <form action="../auth/logout" method="post">
-            <input class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 mt-4 rounded" type="submit" value="Logout">
-          </form>
->>>>>>> c7c20de50258390e8c86fc8a0a153f46df10c329
           </div>
         </div>
       <% } %>
